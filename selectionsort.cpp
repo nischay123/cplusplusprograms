@@ -2,29 +2,29 @@
 using namespace std;
 
 
+
 void print(int a[] ,int n){
 	for(int i=0 ;i<n ;i++)
 		cout<<a[i]<<" ";
 }
+
 int main()
-{
+{  
 	int a[] = {-1,4,6,89,2,5,3,44,23,8,9,7,6,1,285} ;
 	/* code */
-    int count =0 ;
 	int n= sizeof(a)/sizeof(int);
-    for(int i=1 ;i<n;i++ ){
-    	for(int j=0 ;j<n-i ;j++){
-    		if(a[j]>a[j+1]){
- 				swap(a[j] ,a[j+1]);
-                count ++;
-    		}
-    	}
-        if(count==0){
-            break;
-        }
-        
+     for(int i=0 ;i<n;i++){
+     	int min =i;
+     	for(int j=i; j<n;j++){
+            if(a[min]>a[j]){
+            	min = j;
+            }
 
-    }
+     	}
+     	 swap(a[min],a[i]);
+     }
     print(a,n);
+
 	return 0;
+
 }
